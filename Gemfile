@@ -31,4 +31,5 @@ group :test do
   gem 'faker', '~> 1.9', '>= 1.9.1'
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
+  gem 'simplecov', require: false
 end

@@ -22,3 +22,6 @@
 
 # RSpec
 spec/examples.txt
+
+# SimpleCov
+coverage

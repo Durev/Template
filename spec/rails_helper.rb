@@ -7,6 +7,7 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 require "database_cleaner"
+require "simplecov"
 
 # The following line is provided for convenience purposes. It has the downside
 # of increasing the boot-up time by auto-requiring all files in the support
@@ -22,6 +23,22 @@ begin
 rescue ActiveRecord::PendingMigrationError => e
   puts e.to_s.strip
   exit 1
+end
+
+# Setup SimpleCov
+SimpleCov.start 'rails' do
+  add_filter do |source_file|
+    # Do not check files shorter than 5 lines
+    source_file.lines.count < 5
+  end
+end
+
+# TO DO: Setup minimum coverage
+SimpleCov.at_exit do
+  SimpleCov.result.format!
+  # SimpleCov.minimum_coverage 90
+  # SimpleCov.minimum_coverage_by_file 80
+  # SimpleCov.maximum_coverage_drop 5
 end
 
 # Configure Shoulda Matchers
