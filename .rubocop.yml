@@ -6,6 +6,7 @@ AllCops:
   DisplayCopNames: true
   Exclude:
     - 'db/schema.rb'
+    - 'db/migrate/*'
     - 'vendor/**/*'
     - 'config/environments/*.rb'
     - 'bin/*'
