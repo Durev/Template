@@ -25,3 +25,6 @@ spec/examples.txt
 
 # SimpleCov
 coverage
+
+# Rubocop
+.rubocop-http---relaxed-ruby-style-rubocop-yml

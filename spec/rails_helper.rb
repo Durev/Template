@@ -1,6 +1,6 @@
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
@@ -81,7 +81,6 @@ RSpec.configure do |config|
   # Set up Factory Bot
   config.include FactoryBot::Syntax::Methods
 
-
   # Set up Database Cleaner
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
   config.before(:suite) do
@@ -95,6 +94,4 @@ RSpec.configure do |config|
       example.run
     end
   end
-
-
 end
