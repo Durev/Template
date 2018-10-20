@@ -1,0 +1,12 @@
+<div class="center jumbotron home--jumbotron">
+  <h1>Home</h1>
+
+  <h3>Welcome to the Template App</h3>
+  <p>Looks like everything is running smoothly ⛵️</p>
+
+  <% if user_signed_in? %>
+    <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-danger btn-lg" %>
+  <% else %>
+    <%= link_to 'Log in', new_user_session_path, class: "btn btn-success btn-lg" %>
+  <% end %>
+</div>
