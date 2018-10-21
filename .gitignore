@@ -31,3 +31,6 @@ coverage
 
 # Ignore application configuration (Figaro)
 /config/application.yml
+
+# Redis dump file
+dump.rdb
