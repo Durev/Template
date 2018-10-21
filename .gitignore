@@ -28,3 +28,6 @@ coverage
 
 # Rubocop
 .rubocop-http---relaxed-ruby-style-rubocop-yml
+
+# Ignore application configuration (Figaro)
+/config/application.yml
