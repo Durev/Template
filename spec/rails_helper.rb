@@ -49,6 +49,9 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
+# Do not queue jobs during tests
+ActiveJob::Base.queue_adapter = :test
+
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
