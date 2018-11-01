@@ -1,24 +1,75 @@
-# README
+## Main libraries and tools used
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##### Authentification
+- Devise
 
-Things you may want to cover:
+##### Emails delivery
+ - Mailtrap (dev)
+ - Sendgrid (prod)
 
-* Ruby version
+##### Database
+- PostgreSQL
+- Redis
 
-* System dependencies
+##### Background jobs processing
+- Sidekiq
 
-* Configuration
+##### Testing and Continous Integration
+- RSpec
+- CircleCI
 
-* Database creation
+##### Frontend
+- Bootstrap 4
 
-* Database initialization
+## Run the app in Development
+### Setup
+##### 1. Install dependencies
+`bundle install`
 
-* How to run the test suite
+##### 2. Initialize db
+`bundle exec rake db:create && bundle exe rake db:migrate`
 
-* Services (job queues, cache servers, search engines, etc.)
+##### 3. Environment variables
+Use Figaro to generate a file for configuration values and add it to .gitignore :
+`bundle exec figaro install`
 
-* Deployment instructions
+##### 4. Mailtrap
+Get mailtrap credentials from the chosen inbox (https://mailtrap.io/inboxes).
+Add them to development environment variables in `config/application.yml`:
+```yml
+development:
+  MAILTRAP_USERNAME: "424242424242424242"
+  MAILTRAP_PASSWORD: "424242424242424242"
+```
 
-* ...
+### Run the app
+##### 1. Launch redis
+`redis-server`
+
+##### 2. Launch sidekiq
+`sidekiq -q default -q mailers`
+
+##### 3. Launch web server
+`rails s`
+
+
+## Run the app in Production
+### Setup
+##### 1. Heroku
+Create a new pipeline linked to the GitHub repo.
+Add these addons for each app:
+- Heroku Postgres
+- Heroku Redis
+- Sendgrid
+
+Setup autodeploy in staging.
+
+##### 2. Environment variables
+Add the `HOSTNAME` environment variable in staging and production and set its value to the app hostname, *e.g. `durev-template.herokuapp.com`*.
+(It is used in the mailer config, in order to get the correct domain for the emails links URL)
+
+##### 3. CircleCI
+Add the project to CircleCI.
+
+##### 4. Deploy
+Manually deploy from staging to production :rocket:
