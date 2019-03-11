@@ -15,6 +15,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'sidekiq', '~> 5.2.2'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'faker', '~> 1.9', '>= 1.9.1'
+gem 'draper'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -33,7 +35,6 @@ end
 group :test do
   gem 'database_cleaner', '~> 1.6', '>= 1.6.2'
   gem 'factory_bot_rails', '~> 4.11', '>= 4.11.1'
-  gem 'faker', '~> 1.9', '>= 1.9.1'
   gem 'rspec-rails', '~> 3.8'
   gem "rspec_junit_formatter", '~> 0.4', '>= 0.4.1'
   gem 'shoulda-matchers', '~> 3.1', '>= 3.1.2'
