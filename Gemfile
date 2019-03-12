@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'coffee-rails', '~> 4.2'
-gem 'devise', '~> 4.5.0'
+gem 'devise', '~> 4.6.1'
 gem 'figaro', '~> 1.1.1'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -23,7 +23,7 @@ end
 
 group :development do
   gem "better_errors", '~> 2.5.1'
-  gem 'guard-rspec', require: false
+  gem 'guard-rspec', '~> 4.7.3', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
