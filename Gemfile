@@ -22,7 +22,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "better_errors", '~> 2.5.1'
+  gem "better_errors", '~> 2.8.0'
   gem 'guard-rspec', '~> 4.7.3', require: false
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
